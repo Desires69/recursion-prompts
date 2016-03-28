@@ -39,7 +39,20 @@ var isEven = function (n) {
 // 5. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function (x, y) {
+  var result = [];
+  var ascend = y > x ? true : false;
+  var diff  = ascend ? y - x : x - y;
+  if (diff < 2) return result;
+  if (ascend) {
+    result.push(x + 1);
+    var recursiveResults = range(x + 1, y);
+  } else {
+    result.push(x - 1);
+    var recursiveResults = range(x - 1, y);
+  }
 
+  result = result.concat(recursiveResults);
+  return result;
 };
 
 
