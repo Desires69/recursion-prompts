@@ -17,7 +17,6 @@ var sum = function (array) {
   return array[0] + sum(array.slice(1, array.length));
 };
 
-
 // 3. Sum all numbers in an array containing nested arrays.
 // Example: arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function (arr) {
@@ -50,7 +49,7 @@ var range = function (x, y) {
     result.push(x - 1);
     var recursiveResults = range(x - 1, y);
   }
-
+  
   result = result.concat(recursiveResults);
   return result;
 };
@@ -62,7 +61,11 @@ var range = function (x, y) {
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function (base, exp) {
-
+  if (exp === 0) return 1;
+  if (exp === 1) return base;
+  if (exp === - 1) return 1 / base;
+  if (exp < 0) return (1 / base) * exponent(base, exp + 1);
+  return base * exponent(base, exp - 1);
 };
 
 
