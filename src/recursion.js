@@ -78,7 +78,12 @@ var exponent = function (base, exp) {
 
 // 7. Write a function that accepts a string a reverses it.
 var reverse = function (string) {
-
+  var result = '';
+  if (!string.length) return result;
+  result += string[string.length-1];
+  var recursiveResults = reverse(string.slice(0, string.length-1));
+  result += recursiveResults;
+  return result;
 };
 
 
