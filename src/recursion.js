@@ -29,7 +29,10 @@ var arraySum = function (arr) {
 
 // 4. Check whether a number is even or not.
 var isEven = function (n) {
-
+  n = Math.abs(n);
+  if (n === 0) return true;
+  if (n === 1) return false;
+  return isEven(n - 2);
 };
 
 
