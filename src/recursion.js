@@ -84,9 +84,6 @@ var exponent = function (base, exp) {
   if (!exp) return 1;
   if (exp < 0) return (1 / base) * exponent(base, exp + 1);
   return base * exponent(base, exp - 1);
-=======
-var exponent = function(base, exp) {
->>>>>>> upstream/master
 };
  */
 
