@@ -25,15 +25,6 @@ var arraySum = function (arr) {
   return arr[0] + arraySum(arr.slice(1, arr.length));
 };
 
-
-// 4. Check whether a number is even or not.
-var isEven = function (n) {
-  n = Math.abs(n);
-  if (n === 0) return true;
-  if (n === 1) return false;
-  return isEven(n - 2);
-};
-
 // 4. Check if a number is even.
 var isEven = function(n) {
   n = Math.abs(n);
