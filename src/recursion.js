@@ -119,7 +119,7 @@ var modulo = function(x, y) {
   if (y === 1) return 0;
   if (x < 0) {
     if (y > 0) {
-      if (+x < y) return x;
+      if (-x < y) return x;
       return modulo(x + y, y);
     } else {
       if (x > y) return x;
